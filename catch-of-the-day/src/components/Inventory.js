@@ -7,7 +7,16 @@ class Inventory extends React.Component {
     return (
       <div className="inventory">
         <h2>Inventory</h2>
-        {Object.keys(this.props.fishes).map(key => <EditFishForm key={key} index={key} fish={this.props.fishes[key]} updateFish={this.props.updateFish} />)}
+        {Object.keys(this.props.fishes).map(key => (
+          <EditFishForm 
+            key={key} 
+            index={key} 
+            fish={this.props.fishes[key]} 
+            updateFish={this.props.updateFish} 
+            deleteFish={this.props.deleteFish}
+          />
+        ))}
+
 
         {/*receiving addFish from App.js ('this.props' because I am receiving prop data from App.js) and passing to AddFishForm */}
         <AddFishForm addFish={this.props.addFish} />
