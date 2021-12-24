@@ -1,5 +1,6 @@
-import React from 'react';
-import { formatPrice } from '../helpers';
+import React from "react";
+import PropTypes from "prop-types"
+import { formatPrice } from "../helpers";
 
 class AddFishForm extends React.Component {
   nameRef = React.createRef();
@@ -7,6 +8,10 @@ class AddFishForm extends React.Component {
   statusRef = React.createRef();
   descRef = React.createRef();
   imageRef = React.createRef();  
+
+  static propTypes = {
+    addFish: PropTypes.func
+  }
 
   createFish = (event) => {
     // 1. stop form from submitting
